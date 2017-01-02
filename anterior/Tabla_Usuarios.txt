@@ -1,0 +1,4 @@
+1 15 6 Datos --
+User            Nivel           Pass            Eliminado       TipoDoc         NumDoc         
+0               0               0               0               0               0              
+admin           Admin           &z)<8+          No              DNI             666            
