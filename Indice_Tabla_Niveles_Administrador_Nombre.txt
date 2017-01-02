@@ -1,0 +1,5 @@
+20                  3                   3                   
+Nombre              ID                  
+Administrador       1                   
+Alumno              3                   
+Profesor            2                   
