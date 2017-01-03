@@ -1,6 +1,6 @@
 tokyoDB
 
-Es una base de datos orientada a cualquier tipo de uso (Biclitecas, Aulas, Comedor, etc), pues permite crear tablas, registros, modificar registros, etc.
+Es una base de datos orientada a cualquier tipo de uso (Biclitecas, Aulas, Comedor, etc), pues permite crear tablas, registros, modificar registros, etc, de manera genérica.
 
 Solo tiene predefinidas las tablas de las cuentas de usuario donde "admin" (y contraseña "admin") es el usuario inicial.
 
