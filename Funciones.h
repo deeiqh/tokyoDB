@@ -54,24 +54,23 @@ void modificar_campo_registro(Usuario *usuario);
 
 //-------------------------------------------------------------------------------------
 
-void mostrar_registro(Usuario *usuario);
+void indexar_campo(Usuario *usuario);
 
 //-------------------------------------------------------------------------------------
 
+void crear_tabla(Usuario *usuario);
+
+//-------------------------------------------------------------------------------------
 
 void eliminar_tabla(Usuario *usuario);
 
 void eliminar_indice(Usuario *usuario);
 
-void crear_tabla(Usuario *usuario);
-
-void indexar_campo(Usuario *usuario);
-
 void agregar_campo(Usuario *usuario);
 
 void eliminar_registro(Usuario *usuario);
 
-
+void mostrar_registro(Usuario *usuario);
 
 
 #endif

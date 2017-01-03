@@ -6,7 +6,6 @@ map<string,string> *levantar_registro_mapa(string nombre_archivo, Tam tamCampos,
 {
     fstream archivo;
     archivo.open( nombre_archivo + ext, fstream::in | fstream::out);
-    archivo.seekg(posicion, fstream::beg);
     
     map<string,string> *mapa = new map<string,string>;
     
@@ -18,6 +17,7 @@ map<string,string> *levantar_registro_mapa(string nombre_archivo, Tam tamCampos,
     
     for(int j = 0; j != cantRegistros; j++){
         
+        archivo.seekp(posicion, fstream::beg);
         archivo.read(&key_[0], tamCampos);
 
         posicion += tamCampos*(ordenCampo-1); //ubico en el campo adecuado

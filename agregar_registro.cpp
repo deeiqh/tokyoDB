@@ -43,7 +43,6 @@ void agregar_registro(Usuario *usuario) // pide por consola el nombre de la tabl
             //si hay indice, agregar al arch indice            
             arch_indice.open("Indice_" + nombre_tabla + "_" + campo + ext, fstream::in | fstream::out);
             if (arch_indice.is_open()){
-                cout << "entrooo";
                 arch_indice.close();
                 arch_indice.clear();
                 agregar_a_indice("Indice_" + nombre_tabla + "_" + campo, key_, campo_);                   
