@@ -7,18 +7,24 @@ A partir de ello se puede insertar, crear, etc, tanto tablas como registros.
 Debido al sistema de usuarios y niveles, se logra que ciertas tablas solo sean accedidas por ciertos usuarios.
 
 El uso es intuitivo, solo hay que conocer los comandos, entre ellos: 
+
   agregar_registro
-  
-  crear_tabla
-  
-  indexar_campo
-  
-  mostrar_registro
-  
-  eliminar_registro
   
   modificar_campo_registro
   
-  agregar_campo
+  indexar_campo
   
-  eliminar_tabla
+  crear_tabla
+  
+  Próximamente: 
+  
+  eliminar_registro 
+  
+  eliminar_tabla // ¿será adecuado implementarlo?
+  
+  eliminar_indice // remove
+  
+  agregar_campo // solo posible al crear una tabla
+  
+  mostrar_registro // para búsquedas complejas
+ 
