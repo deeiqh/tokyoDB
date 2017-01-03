@@ -1,4 +1,4 @@
 20                  8                   2                   
 ID                  User                Creador             Eliminado           Nivel_valor         Pass                TipoDoc             NumDoc              
 1                   admin               God                 No                  1                   +.'#$               DNI                 777                 
-2                   Luca                admin               No                  3                   &%))                DNI                 4522                
+2                   Luca                admin               No                  3                   ?)+                DNI                 7003432             

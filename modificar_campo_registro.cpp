@@ -21,6 +21,8 @@ void modificar_campo_registro(Usuario *usuario)
         string campo_;
         cout << "Campo Nuevo:\t";
         cin >> campo_;
+        if (campo == "Pass")
+                campo_ = criptar(campo_);
         
         //si no esta indexado solo se sobreescribe el campo
         fstream arch_indice;

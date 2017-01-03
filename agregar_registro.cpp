@@ -4,7 +4,7 @@ void agregar_registro(Usuario *usuario) // pide por consola el nombre de la tabl
 {
     cout << "Nombre de tabla:\t";
     string nombre_tabla;
-    cin >> nombre_tabla;   
+    cin >> nombre_tabla;
     
     if (verificar_nivel(usuario, nombre_tabla)){
         //agregar_registro

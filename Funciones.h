@@ -58,7 +58,13 @@ void indexar_campo(Usuario *usuario);
 
 //-------------------------------------------------------------------------------------
 
+void crear_tabla_(string nombre_tabla);
+
 void crear_tabla(Usuario *usuario);
+
+//-------------------------------------------------------------------------------------
+
+void eliminar_registro(Usuario *usuario);
 
 //-------------------------------------------------------------------------------------
 
@@ -66,12 +72,9 @@ void eliminar_tabla(Usuario *usuario);
 
 void eliminar_indice(Usuario *usuario);
 
-void agregar_campo(Usuario *usuario);
-
-void eliminar_registro(Usuario *usuario);
+void agregar_campo(Usuario *usuario); //solo posible al crear una tabla
 
 void mostrar_registro(Usuario *usuario);
 
 
 #endif
-
