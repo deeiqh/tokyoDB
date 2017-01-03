@@ -6,24 +6,26 @@ bool verificar_nivel(Usuario *usuario, string nombre_tabla)
     fstream arch_tabla;
     arch_tabla.open(nombre_tabla + ext, fstream::in | fstream::out);
     if(!arch_tabla.is_open()){//verificar que exista la tabla
-        cout << "La tabla " << nombre_tabla << " no existe.";
+        cout << "La tabla " << nombre_tabla << " no existe.\n\n";
         return false;
     }
     else{
         arch_tabla.close();
+        arch_tabla.clear();
         //extraer el nivel del nombre de la tabla
         istringstream line(nombre_tabla);
         string nivel;
         getline(line, nivel, '_');
         getline(line, nivel, '_');
-        getline(line, nivel, '_');       
-                
+        getline(line, nivel, '_');
+        
         // indexar si no existe el indice niveles-nombre
         fstream arch_indice;
         arch_indice.open("Indice_" tabla_niveles "_Nombre" ext, fstream::in | fstream::out);
         if(!arch_indice.is_open()){
             indexar_campo_(tabla_niveles, "Nombre");
-        }
+            arch_indice.open("Indice_" tabla_niveles "_Nombre" ext, fstream::in | fstream::out);
+        }        
         
         // buscar id del nombre del nivel, return false si no se encuentra el nombre del nivel
         Entero posicion;

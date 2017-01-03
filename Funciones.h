@@ -41,68 +41,22 @@ void agregar_registro(Usuario *usuario); // pide por consola el nombre de la tab
 
 //-------------------------------------------------------------------------------------
 
+void escribir_mapa(string nombre_indice, map<string,string> *mapa, Tam tamCampos,
+                    Tam posicion);
 
+map<string,string> *levantar_registro_mapa(string nombre_archivo, Tam tamCampos, 
+                                           Tam  cantCampos,
+                                            Tam ordenCampo, Tam cantRegistros, Tam posicion);
+
+string sobreescribir_campo(string nombre_tabla, string key_, string campo, string campo_);
+
+void modificar_campo_registro(Usuario *usuario);
 
 //-------------------------------------------------------------------------------------
 
+void mostrar_registro(Usuario *usuario);
 
-
-
-
-/*
-void agregar_a_indice(string nombre_tabla, string campo, string key)
-{
-    fstream arch_indice;
-    arch_indice.open("Indice_" + nombre_tabla + "_User" + ext, fstream::binary | fstream::in | fstream::out);
-    
-    //levanto registros a map, agrego registro(campo y key), escribo map
-    map<string,string> mapa;
-        //levanto registros
-        
-    string linea_, tamCampos_;
-    getline(arch_indice,linea_);
-    istringstream linea(linea_);
-    linea >> tamCampos_;
-    string cantRegistros;
-    linea >> cantRegistros;
-    Tam tamCampos = static_cast<Tam> ( stoul(tamCampos_));   
-    
-    Tam posicion = tamCampos*3 + 2 + tamCampos*2 + 2 + 1;//al inicio del nuevo registro
-    arch_indice.seekg(posicion);
-        //levanto a map
-    string campo_(" ", tamCampos);
-    string key_(" ", tamCampos);
-    string temp(" ",2);//para que lea el salto de linea    
-    while(!arch_indice.eof()){
-        arch_indice.read(&campo_[0], tamCampos);
-        arch_indice.read(&key_[0], tamCampos);
-        arch_indice.read(&temp[0], 2);
-        mapa[campo_] = key_;
-        campo_ = "";  
-        key_ = "";
-        temp = "";
-    }
-        // agrego registro
-    mapa[campo] = key;
-        // escribo map
-    arch_indice.seekp(posicion);
-    tr(mapa, it){
-        temp = "";
-        temp.append(formatear_casilla(tamCampos,it->second));
-        temp.append(formatear_casilla(tamCampos,it->first));        
-        arch_indice << temp + "\n"; 
-    }   
-    
-    // subir a 1 el numero de registros en el archivo (primera linea)   
-    arch_indice.seekp(fstream::beg);
-    arch_indice.seekp(tamCampos+1);
-    cantRegistros = to_string( stoul(cantRegistros) + 1 );
-    arch_indice.write(&formatear_casilla(tamCampos,cantRegistros)[0], tamCampos);
-    
-    arch_indice.close();
-    
-}
-*/
+//-------------------------------------------------------------------------------------
 
 
 void eliminar_tabla(Usuario *usuario);
@@ -115,11 +69,9 @@ void indexar_campo(Usuario *usuario);
 
 void agregar_campo(Usuario *usuario);
 
-void modificar_campo_registro(Usuario *usuario);
-
 void eliminar_registro(Usuario *usuario);
 
-void mostrar_registro(Usuario *usuario);
+
 
 
 #endif

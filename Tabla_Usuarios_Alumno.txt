@@ -1,4 +1,3 @@
-20                  8                   2                   
+20                  8                   1                   
 ID                  User                Creador             Eliminado           Nivel_valor         Pass                TipoDoc             NumDoc              
 1                   admin               God                 No                  1                   +.'#$               DNI                 777                 
-2                   Yo                  admin               No                  3                   fruta               DNI                 1234                

@@ -20,8 +20,9 @@ void agregar_registro(Usuario *usuario) // pide por consola el nombre de la tabl
         string cabecera;
         getline(arch_tabla, cabecera);
         
-        istringstream is(cabecera);        
-        //por cada campo pido por 
+        istringstream is(cabecera);      
+        
+        //por cada campo pido
         string key_,campo, campo_;
         string registro("");
         fstream arch_indice;
@@ -29,17 +30,23 @@ void agregar_registro(Usuario *usuario) // pide por consola el nombre de la tabl
         is >> campo;
         cout << campo << ":\t";
         cin >> key_;
-        registro += key_ + " ";
+        if (key_ == salir) { cout << "\n"; return;}
+        registro += key_ + " "; 
         while(is >> campo){
             cout << campo << ":\t";
             cin >> campo_;
+            if (campo_ == salir) { cout << "\n"; return;}
+            if (campo == "Pass")
+                campo_ = criptar(campo_);
             registro += campo_ + " ";
             //si no hay archivo indice del campo, seguir pidiendo campos
-            //si hay indice, agregar al arch indice
-            arch_indice.open("Indice_" + nombre_tabla + campo + ext, fstream::in | fstream::out);
+            //si hay indice, agregar al arch indice            
+            arch_indice.open("Indice_" + nombre_tabla + "_" + campo + ext, fstream::in | fstream::out);
             if (arch_indice.is_open()){
-                arch_indice.close(),
-                agregar_a_indice("Indice_" + nombre_tabla + campo, key_, campo_);
+                cout << "entrooo";
+                arch_indice.close();
+                arch_indice.clear();
+                agregar_a_indice("Indice_" + nombre_tabla + "_" + campo, key_, campo_);                   
             }
             
         }
@@ -64,6 +71,6 @@ void agregar_registro(Usuario *usuario) // pide por consola el nombre de la tabl
         
         arch_tabla.close();        
 
-        cout << "Registro agregado.\n\n";
+        cout << "\nRegistro agregado.\n\n";
     }        
 }
